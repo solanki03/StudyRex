@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+    --font-Audiowide: "Audiowide", sans-serif;
+    --font-Poppins: "Poppins", sans-serif;
+    --font-Montserrat: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: black;
+    color: azure;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6, label, thead {
+    font-family: var(--font-Poppins);
+}
+
+p, a, span, td, input, button {
+    font-family: var(--font-Montserrat);
+}
