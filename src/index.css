@@ -22,3 +22,7 @@ h1, h2, h3, h4, h5, h6, label, thead {
 p, a, span, td, input, button {
     font-family: var(--font-Montserrat);
 }
+
+--webket-scrollbar{
+    width: 0px;
+}

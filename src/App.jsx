@@ -22,8 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/bot/:subject" element={<BotRoom />} /> */}
-        <Route path="/bot" element={<BotRoom />} />
+        <Route path="/bot/:topic" element={<BotRoom />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

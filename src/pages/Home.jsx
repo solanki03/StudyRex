@@ -28,7 +28,7 @@ const Home = () => {
     return (
         <main className='w-full relative'>
             <Aurora
-                colorStops={["#6F8ED8", "#812FAD", "#53E0F3"]}
+                colorStops={["#FD588A", "#F1FD49", "#00CCFF"]}
                 blend={0.5}
                 amplitude={1.0}
                 speed={0.6}
