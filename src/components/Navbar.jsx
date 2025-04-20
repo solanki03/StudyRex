@@ -11,7 +11,7 @@ const Navbar = ({ className }) => {
             </Link>
 
             <SignedOut>
-                <AuthButton name="Sign up" />
+                <AuthButton name="Sign in" />
             </SignedOut>
             <SignedIn>
                 <UserButton />

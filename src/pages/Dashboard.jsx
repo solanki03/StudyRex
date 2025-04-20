@@ -35,7 +35,7 @@ const Dashboard = () => {
       <Navbar className="sticky bg-black/80 backdrop-blur-sm transition-all duration-300 ease-in-out" />
 
       <div className='flex flex-col gap-5 items-center justify-center px-5 mt-5'>
-        <h1 className='font-semibold text-2xl sm:text-4xl text-center block border-b-2 px-10 pb-4 border-slate-700'>
+        <h1 className='font-semibold text-2xl sm:text-4xl text-center block border-b-2 md:px-10 pb-4 border-slate-700'>
           <span className='text-slate-300'>Your StudyRex Subject Bots</span> <br />
         </h1>
         <div className='max-w-6xl mx-auto px-8'>
@@ -67,7 +67,7 @@ const Dashboard = () => {
       <Copyright />
 
       {showSignInModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center mx-6">
           <div className="p-6 rounded-xl shadow-lg max-w-md w-full relative bg-black ring-1 ring-pink-300">
             <button className="absolute top-2 right-3 text-gray-300 cursor-pointer" onClick={() => setShowSignInModal(false)}>
               <i class="ri-close-fill"></i>
@@ -75,7 +75,7 @@ const Dashboard = () => {
             <div className='flex flex-col items-center justify-center text-center'>
               <h2 className="text-lg font-semibold mb-4">Please sign in to continue</h2>
               <SignedOut>
-                <AuthButton name="Sign up" />
+                <AuthButton name="Sign in" />
               </SignedOut>
               <SignedIn>
                 <UserButton />
