@@ -1,10 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ClerkLoading } from '@clerk/clerk-react'
+import { ClerkLoading, ClerkLoaded } from '@clerk/clerk-react'
 import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
 import BotRoom from "@/pages/BotRoom";
 import NotFound from "@/pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -19,12 +20,14 @@ function App() {
         </main>
       </ClerkLoading>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/bot/:topic" element={<BotRoom />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ClerkLoaded>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/bot/:topic" element={<ProtectedRoute><BotRoom /></ProtectedRoute>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ClerkLoaded>
     </>
   )
 }

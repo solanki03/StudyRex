@@ -19,8 +19,10 @@ const Home = () => {
     ];
 
     const features = [
-        {id: 1, icon: "ri-rocket-fill", title: "AI-Powered Study Assistant", description: "Get personalized study plans and resources tailored to your learning style." },
-        {id: 2, icon: "", title: "", description: "" },
+        { id: 1, icon: "ri-focus-3-line", title: "Subject-Specific Bots", description: "Each bot is trained to focus only on one academic subject (e.g., History, Engineering). Off-topic questions are politely declined to ensure relevance and depth." },
+        { id: 2, icon: "ri-chat-1-fill", title: "Persistent Chat History", description: "All chat messages are saved in localStorage. Users can revisit a bot and instantly see their past questions and answers, enhancing continuity in learning." },
+        { id: 3, icon: "ri-lock-password-fill", title: "Protected Access", description: "Users must authenticate through Clerk to access any chatbot. Bots are only accessible via the dashboard, preventing direct unauthorized access." },
+        { id: 4, icon: "ri-moon-fill", title: "Clean, Dark Mode UI", description: "StudiVets features a fully dark-themed interface with smooth animations and visually appealing component design for a focused study experience." },
     ];
 
     const botFields = ["Engineering", "Computer Science", "Biology", "History", "Geography", "Economics", "Psychology", "Literature"];
@@ -33,7 +35,7 @@ const Home = () => {
                 amplitude={1.0}
                 speed={0.6}
             />
-            <div className='h-dvh w-full flex flex-col items-center justify-center'>
+            <div className='h-dvh w-full flex flex-col items-center justify-center mb-32'>
                 <Navbar className={"bg-transparent absolute"} />
 
                 {/* Hero Section */}
@@ -52,83 +54,25 @@ const Home = () => {
             </div>
 
             {/* Features Section */}
-            {/* 
+            <h1 className='text-3xl md:text-5xl font-medium text-center mb-2'>Explore Features</h1>
             <article className='w-full grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 px-6 sm:px-10 py-20 mb-10 md:mb-20'>
-                <div className="w-4/6 rounded-lg bg-slate-950/60 ring-1 ring-slate-400 p-4 shadow-xs transition hover:bg-slate-800/60 sm:p-6">
-                <div className="flex items-center gap-5">
-                    <i className="ri-rocket-fill rounded-sm bg-indigo-600 p-2"></i>
-
-                    <h3 className="mt-0.5 text-lg font-medium">
-                        Lorem ipsum elit.
-                    </h3>
+                {features.map((feature) => (
+                <div key={feature.id} className="w-full md:w-5/6 xl:w-4/6 rounded-lg bg-slate-950/60 ring-1 ring-pink-400 p-4 shadow-xs transition hover:bg-slate-800/60 hover:ring-pink-600 sm:p-6">
+                    <div className="flex items-center gap-5">
+                        <i className={`${feature.icon} rounded-sm bg-pink-600 p-2`}></i>
+                        <h3 className="mt-0.5 text-lg font-medium">{feature.title}</h3>
+                    </div>
+                    <p className="mt-3 text-sm/relaxed">{feature.description}</p>
                 </div>
+))}
 
-                    <p className="mt-3 line-clamp-3 text-sm/relaxed text-gray-400">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
-                        animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem, mollitia
-                        itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                        Molestias explicabo corporis voluptatem?
-                    </p>
-                </div>
-
-                <div className="w-4/6 rounded-lg border border-slate-400 p-4 shadow-xs transition hover:bg-slate-800/40 sm:p-6">
-                <div className="flex items-center gap-5">
-                    <i className="ri-rocket-fill rounded-sm bg-indigo-600 p-2"></i>
-
-                    <h3 className="mt-0.5 text-lg font-medium">
-                        Lorem ipsum elit.
-                    </h3>
-                </div>
-
-                    <p className="mt-3 line-clamp-3 text-sm/relaxed text-gray-400">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
-                        animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem, mollitia
-                        itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                        Molestias explicabo corporis voluptatem?
-                    </p>
-                </div>
-
-                <div className="w-4/6 rounded-lg border border-slate-400 p-4 shadow-xs transition hover:bg-slate-800/40 sm:p-6">
-                <div className="flex items-center gap-5">
-                    <i className="ri-rocket-fill rounded-sm bg-indigo-600 p-2"></i>
-
-                    <h3 className="mt-0.5 text-lg font-medium">
-                        Lorem ipsum elit.
-                    </h3>
-                </div>
-
-                    <p className="mt-3 line-clamp-3 text-sm/relaxed text-gray-400">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
-                        animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem, mollitia
-                        itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                        Molestias explicabo corporis voluptatem?
-                    </p>
-                </div>
-
-                <div className="w-4/6 rounded-lg border border-slate-400 p-4 shadow-xs transition hover:bg-slate-800/40 sm:p-6">
-                <div className="flex items-center gap-5">
-                    <i className="ri-rocket-fill rounded-sm bg-indigo-600 p-2"></i>
-
-                    <h3 className="mt-0.5 text-lg font-medium">
-                        Lorem ipsum elit.
-                    </h3>
-                </div>
-
-                    <p className="mt-3 line-clamp-3 text-sm/relaxed text-gray-400">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
-                        animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem, mollitia
-                        itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                        Molestias explicabo corporis voluptatem?
-                    </p>
-                </div>
             </article>
-             */}
 
             {/* Footer */}
             <footer className="w-full flex flex-col justify-center items-center px-8 sm:px-15">
                 <div className="container flex flex-wrap max-sm:justify-between justify-evenly items-center border-t border-gray-700 py-8">
                     {/* Branding */}
-                    <div className="mb-6 md:mb-0">
+                    <div className="flex flex-col justify-items-start mb-4">
                         <h2 className="text-2xl md:text-3xl font-Audiowide!">StudyRex</h2>
                         <p className="text-gray-400 text-sm sm:text-base">Study Smarter, Not Harder.</p>
 
@@ -143,17 +87,17 @@ const Home = () => {
                     </div>
 
                     {/* Features */}
-                    {/*
-                    <div>
+                    <div className="mb-4">
                         <h3 className="text-base font-medium mb-2">Features</h3>
-                        <div className="grid grid-cols-3 gap-6 text-xs md:text-sm text-gray-400">
-
+                        <div className="flex flex-col text-xs md:text-sm text-gray-400">
+                            {features.map((feature) => (
+                                <p key={feature.id} className="space-y-1">{feature.title}</p>
+                            ))}
                         </div>
                     </div>
-                    */}
 
                     {/* Bots */}
-                    <div>
+                    <div className="mb-2">
                         <h3 className="text-base font-medium mb-2">Explore Our Study Bots</h3>
                         <div className="grid grid-cols-2 gap-8 text-xs md:text-sm text-gray-400">
                             {[0, 4].map((startIndex) => (
@@ -170,7 +114,7 @@ const Home = () => {
                 </div>
 
                 {/* Bottom Copyright Section */}
-                <Copyright/>
+                <Copyright />
 
             </footer>
         </main>
