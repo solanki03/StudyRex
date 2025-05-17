@@ -53,21 +53,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Features Section */}
-            <h1 className='text-3xl md:text-5xl font-medium text-center mb-2'>Explore Features</h1>
-            <article className='w-full grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8 px-6 sm:px-10 py-20 mb-10 md:mb-20'>
-                {features.map((feature) => (
-                <div key={feature.id} className="w-full md:w-5/6 xl:w-4/6 rounded-lg bg-slate-950/60 ring-1 ring-pink-400 p-4 shadow-xs transition hover:bg-slate-800/60 hover:ring-pink-600 sm:p-6">
-                    <div className="flex items-center gap-5">
-                        <i className={`${feature.icon} rounded-sm bg-pink-600 p-2`}></i>
-                        <h3 className="mt-0.5 text-lg font-medium">{feature.title}</h3>
-                    </div>
-                    <p className="mt-3 text-sm/relaxed">{feature.description}</p>
-                </div>
-))}
-
-            </article>
-
             {/* Footer */}
             <footer className="w-full flex flex-col justify-center items-center px-8 sm:px-15">
                 <div className="container flex flex-wrap max-sm:justify-between justify-evenly items-center border-t border-gray-700 py-8">
